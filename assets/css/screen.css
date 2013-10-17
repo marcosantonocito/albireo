@@ -1,0 +1,845 @@
+/*
+    Theme Name: Albireo
+    Theme URI: http://www.marcosantonocito.com/ghost/albireo/
+    Description: Ghost Theme
+    Version: 1.0.0
+    Author: Marco Santonocito
+    Author URI: http://www.marcosantonocito.com/
+    License: MIT License
+*/
+
+/* ==========================================================================
+   Table of Contents
+   ========================================================================== */
+
+/*
+
+    0.  Includes
+    1.  Icons
+    2.  General
+    3.  Utilities
+    4.  General
+    5.  Single Post
+    6.  Third Party Elements
+    7.  Pagination
+    8.  Footer
+    9.  Media Queries (Tablet)
+    10. Media Queries (Mobile)
+
+ */
+
+/* ==========================================================================
+   0. Includes - Ground zero
+   ========================================================================== */
+
+@import url(normalize.css);
+@import url(font-awesome.min.css);
+
+
+/* ==========================================================================
+   1. General - Setting up some base styles
+   ========================================================================== */
+
+html {
+    height: 100%;
+    max-height: 100%;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Droid Serif', serif;
+    font-size: 2.0rem;
+    line-height: 1.6em;
+    color: #2C3237;
+    border: 20px solid #F8F8F8;
+    border-bottom: 0px;
+}
+
+::-moz-selection {
+    color: #222;
+    background: #D6EDFF;
+    text-shadow: none;
+}
+
+::selection {
+    color: #222;
+    background: #D6EDFF;
+    text-shadow: none;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+    text-rendering: optimizeLegibility;
+    line-height: 1;
+    margin-top: 0;
+    font-family: 'Droid serif', serif;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 4.2rem;
+    line-height: 1.2em;
+    letter-spacing: -2px;
+    text-indent: -3px;
+}
+
+h2 {
+    font-size: 3.6rem;
+    line-height: 1.2em;
+    letter-spacing: -1px;
+    text-indent: -2px;
+}
+
+h3 {
+    font-size: 3.0rem;
+}
+
+h4 {
+    font-size: 2.4rem;
+}
+
+h5 {
+    font-size: 2.0rem;
+}
+
+h6 {
+    font-size: 1.8rem;
+}
+
+a {
+    color: #2C3237;
+    transition: color ease 0.3s;
+}
+
+a:hover {
+    color: #828487;
+}
+
+h1 a, h2 a, h3 a,
+h4 a, h5 a, h6 a {
+    color: #2C3237;
+}
+
+
+p, ul, ol {
+    margin: 1.6em 0;
+}
+
+ol ol, ul ul,
+ul ol, ol ul {
+    margin: 0.4em 0;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #F2F2F0;
+    margin: 2.0em auto;
+    padding: 0;
+    width: 120px;
+}
+
+blockquote {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 1.6em 0 1.6em -2.2em;
+    padding: 0 0 0 1.6em;
+    text-align: center;
+    font-weight: normal;
+}
+
+blockquote p {
+    margin: 0.8em 0;
+    font-family: "Georgia", serif;
+    font-size: 2.4rem;
+    font-style: italic;
+    color: #BBC7CC;
+}
+
+blockquote small {
+    display: inline-block;
+    margin: 0.8em 0 0.8em 1.5em;;
+    font-size:0.9em;
+    color: #ccc;
+}
+
+blockquote small:before { content: '\2014 \00A0'; }
+
+blockquote cite {
+    font-weight:bold;
+}
+
+blockquote cite a { font-weight: normal; }
+
+
+dl {
+    margin: 1.6em 0;
+}
+
+dl dt {
+    float: left;
+    width: 180px;
+    overflow: hidden;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: bold;
+    margin-bottom: 1em
+}
+
+dl dd {
+    margin-left: 200px;
+    margin-bottom: 1em
+}
+
+mark {
+    background-color: #ffc336;
+}
+
+code, tt {
+    padding: 1px 3px;
+    font-family: Inconsolata, monospace, sans-serif;
+    font-size: 0.85em;
+    white-space: pre;
+    border: 1px solid #E3EDF3;
+    background: #F7FAFB;
+    border-radius: 2px;
+}
+
+pre {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 1.6em 0;
+    border: 1px solid #E3EDF3;
+    width: 100%;
+    padding: 10px;
+    font-family: Inconsolata, monospace, sans-serif;
+    font-size: 0.9em;
+    white-space: pre;
+    overflow: auto;
+    background: #F7FAFB;
+    border-radius: 3px;
+}
+
+pre code, tt {
+    font-size: inherit;
+    white-space: -moz-pre-wrap;
+    white-space: pre-wrap;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+kbd {
+    display: inline-block;
+    margin-bottom: 0.4em;
+    padding: 1px 8px;
+    border: #ccc 1px solid;
+    color: #666;
+    text-shadow: #fff 0 1px 0;
+    font-size: 0.9em;
+    font-weight: bold;
+    background: #f4f4f4;
+    border-radius: 4px;
+    box-shadow:
+        0 1px 0 rgba(0, 0, 0, 0.2),
+        0 1px 0 0 #fff inset;
+}
+
+table {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 1.6em 0;
+    width:100%;
+    max-width: 100%;
+    background-color: transparent;
+}
+
+table th,
+table td {
+    padding: 8px;
+    line-height: 20px;
+    text-align: left;
+    vertical-align: top;
+    border-top: 1px solid #efefef;
+}
+
+table th { color: #000; }
+
+table caption + thead tr:first-child th,
+table caption + thead tr:first-child td,
+table colgroup + thead tr:first-child th,
+table colgroup + thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+    border-top: 0;
+}
+
+table tbody + tbody { border-top: 2px solid #efefef; }
+
+table table table { background-color: #fff; }
+
+table tbody > tr:nth-child(odd) > td,
+table tbody > tr:nth-child(odd) > th {
+    background-color: #f6f6f6;
+}
+
+table.plain {
+    tbody > tr:nth-child(odd) > td,
+    tbody > tr:nth-child(odd) > th {
+        background: transparent;
+    }
+}
+
+
+/* ==========================================================================
+   2. Utilities - These things get used a lot
+   ========================================================================== */
+
+/* Hides shit */
+.hidden {
+    text-indent: -9999px;
+    visibility: hidden;
+    display: none;
+}
+
+/* Creates a responsive wrapper that makes our content scale nicely */
+.inner {
+    position: relative;
+    width: 80%;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+/* Centres vertically yo. (IE8+) */
+.vertical {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+/* ==========================================================================
+   3. General - The main styles for the the theme
+   ========================================================================== */
+
+/* Big cover image on the home page */
+#site-head {
+    position: relative;
+    max-width: 680px;
+    width: 80%;
+    height: 40%;
+    margin: 6rem auto;
+    text-align: center;
+}
+
+/* Yo-logo. Yolo-go. Upload one in ghost/settings/ */
+#blog-logo img {
+    display: block;
+    max-height: 100px;
+    width: auto;
+    margin: 0 auto;
+    line-height: 0;
+}
+
+#back {
+    color: rgba(0,0,0,0.2);
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    padding: 6px;
+    font-size: 16px;
+}
+
+/* The details of your blog. Defined in ghost/settings/ */
+.blog-title {
+    font-family: 'Pacifico', serif;
+    margin: 30px 0 10px 0;
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: -1px;
+}
+
+.blog-description {
+    margin: 20px 0 0 0;
+    font-size: 1.8rem;
+    line-height: 1.5em;
+    font-weight: 100;
+    font-family: 'Lato', serif;
+    letter-spacing: 0;
+    color: #C2C7CE;
+}
+
+/* Every post, on every page, gets this style on its <article> tag */
+.post {
+    position: relative;
+    width:80%;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 4rem 0;
+    border-bottom: 1px solid #F2F2F0;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+.post:first-child{
+    border-top: 1px solid #DEDEDC;
+}
+
+.post:last-child{
+    border-bottom: 1px solid #DEDEDC;
+}
+
+.post-title {
+    color: #2C3237;
+    font-size: 3.2rem;
+    margin:0;
+}
+
+.post-title a {
+    text-decoration: none;
+}
+
+.post-excerpt p {
+    margin: 0.6rem 0 0 0;
+    font-size: 0.9em;
+    line-height: 1.6em;
+    font-weight: 400;
+}
+
+.post-meta {
+    display: inline-block;
+    padding: 0.6rem 0 0 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 100;
+    color: #C2C7CE;
+}
+
+.post-meta li{
+    display: inline;
+    text-align: -webkit-match-parent;
+    margin-left: 20px;
+}
+
+.post-meta li:first-child{
+    margin: 0;
+}
+
+.post-meta i{
+    margin-right: 10px;
+}
+
+.post-meta a {
+    color: #C2C7CE;
+    text-decoration: none;
+}
+
+.post-meta a:hover {
+    text-decoration: underline;
+}
+
+.user-meta {
+    position: relative;
+    padding: 0.3rem 40px 0 100px;
+    min-height: 77px;
+}
+
+.user-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.user-name {
+    display: block;
+    font-weight: bold;
+}
+
+.user-bio {
+    display: block;
+    max-width: 440px;
+    font-size: 1.4rem;
+    line-height: 1.5em;
+}
+
+.publish-meta {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4.3rem 0 4rem 0;
+    text-align: right;
+}
+
+.publish-heading {
+    display: block;
+    font-weight: bold;
+}
+
+.publish-date {
+    display: block;
+    font-size: 1.4rem;
+    line-height: 1.5em;
+}
+
+/* ==========================================================================
+   4. Single Post - When you click on an individual post
+   ========================================================================== */
+
+/* Tweak the .post wrapper style */
+.post-template .post {
+    margin-top: 0;
+    border: none;
+    padding-bottom: 0;
+}
+
+/* Insert some mad padding up in the header for better spacing */
+.post-template .post-header {
+    padding: 60px 0;
+}
+
+.post-template .post-title{
+    text-align: center;
+    font-size: 4.6rem;
+    margin: 1.0rem 0;
+    padding: 0;
+}
+
+.post-template .post-meta{
+    font-size: 1.6rem;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Keep large images within the bounds of the post-width */
+.post-content img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.post-content h2, .post-content h3, .post-content h4,
+.post-content h5, .post-content h6{
+    margin-top: 5.0rem;
+}
+
+/* The author credit area after the post */
+.post-footer {
+    position: relative;
+    margin: 4rem 0 0 0;
+    padding: 4rem 0 0 0;
+    text-align: center;
+}
+
+.post-footer h4 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.post-footer p {
+    margin: 1rem 0;
+    font-size: 1.4rem;
+    line-height: 1.6em;
+}
+
+/* Create some space to the right for the share links */
+.post-footer .author {
+    margin-right: 180px;
+}
+
+.post-footer .share a {
+    font-size: 2.2rem;
+    display: inline-block;
+    margin: 1.4rem 1.6rem 1.6rem 0;
+    color: #BBC7CC;
+}
+
+.post-footer .share a:hover {
+    color: #50585D;
+}
+
+
+/* ==========================================================================
+   5. Third Party Elements - Embeds from other services
+   ========================================================================== */
+
+/* Github */
+
+.gist table {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.gist .line-number {
+    min-width: 25px;
+    font-size: 1.1rem;
+}
+
+
+/* ==========================================================================
+   6. Pagination - Tools to let you flick between pages
+   ========================================================================== */
+
+/* The main wrapper for our pagination links */
+.pagination {
+    position: relative;
+    width: 80%;
+    max-width: 680px;
+    margin: 4rem auto;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 100;
+    color: #BBC7CC;
+    text-align: center;
+}
+
+.pagination a {
+    color: #BBC7CC;
+    transition: color ease 0.3s;
+}
+
+.pagination a:hover{
+    color: #50585D;
+}
+
+/* Push the previous/next links out to the left/right */
+.older-posts,
+.newer-posts {
+    position: absolute;
+    display: inline-block;
+    text-decoration: none;
+    transition: border ease 0.3s;
+    padding: 2px 0;
+}
+
+.older-posts {
+    right: 0;
+}
+
+.page-number {
+    display: inline-block;
+    padding: 2px 0;
+}
+
+.newer-posts {
+    left: 0;
+}
+
+.older-posts:hover,
+.newer-posts:hover {
+    border-color: #9EABB3;
+}
+
+
+/* ==========================================================================
+   7. Footer - The bottom of every page
+   ========================================================================== */
+
+.site-footer {
+    position: relative;
+    margin: 8rem 0 0 0;
+    padding: 4rem 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 100;
+    line-height: 2.0em;
+    color: #BBC7CC;
+    text-align: center;
+    background: #F8F8F8;
+}
+
+.site-footer a {
+    color: #BBC7CC;
+    text-decoration: underline;
+}
+
+.site-footer a:hover {
+    color: #50585D;
+}
+
+/* The subscribe icon on the footer */
+.subscribe {
+    margin-top: 10px;
+    transition: color 0.5s;
+}
+
+.subscribe a{
+    text-decoration: none;
+}
+
+/* Add a box shadow to on hover */
+.subscribe:hover {
+    transition: color 0.25s;
+}
+
+/* ==========================================================================
+   8. Media Queries - Smaller than 900px
+   ========================================================================== */
+
+@media only screen and (max-width: 900px) {
+
+    blockquote {
+        margin-left: 0;
+    }
+
+    #site-head {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        height: auto;
+        min-height: 240px;
+        padding: 15% 0;
+    }
+
+    .blog-title {
+        font-size: 4rem;
+        letter-spacing: -1px;
+    }
+
+    .blog-description {
+        font-size: 1.7rem;
+        line-height: 1.5em;
+    }
+
+    .post {
+        font-size: 0.9em;
+        line-height: 1.6em;
+    }
+
+    .post-template .post {
+        padding-bottom: 1rem;
+    }
+
+    .post-template .post-header {
+        padding: 40px 0;
+    }
+
+    h1 {
+        font-size: 4.8rem;
+        text-indent: -2px;
+    }
+
+    h2 {
+        font-size: 3.8rem;
+    }
+
+    h3 {
+        font-size: 3.3rem;
+    }
+
+    h4 {
+        font-size: 2.8rem;
+    }
+
+}
+
+/* ==========================================================================
+   9. Media Queries - Smaller than 500px
+   ========================================================================== */
+
+
+@media only screen and (max-width: 500px) {
+
+    #blog-logo img {
+        max-height: 80px;
+    }
+
+    .inner,
+    .pagination {
+        width: auto;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    .post {
+        width:auto;
+        margin-left: 16px;
+        margin-right: 16px;
+        font-size: 0.8em;
+        line-height: 1.6em;
+    }
+
+    #site-head {
+        padding: 10% 0;
+    }
+
+    .blog-title {
+        font-size: 3rem;
+    }
+
+    .blog-description {
+        font-size: 1.5rem;
+    }
+
+
+    h1, h2 {
+        font-size: 3rem;
+        line-height: 1.1em;
+        letter-spacing: -1px;
+    }
+
+    h3 {
+        font-size: 2.8rem;
+    }
+
+    h4 {
+        font-size: 2.3rem;
+    }
+
+    .post-template .post {
+        padding-bottom: 0;
+    }
+
+    .post-template .post-header {
+        padding: 30px 0;
+    }
+
+    .post-meta {
+        font-size: 1.3rem;
+    }
+
+    .post-footer {
+        padding: 4rem 0;
+        text-align: center;
+    }
+
+    .post-footer .author {
+        margin: 0 0 2rem 0;
+        padding: 0 0 1.6rem 0;
+        border-bottom: #EBF2F6 1px dashed;
+    }
+
+    .post-footer .share {
+        position: static;
+        width: auto;
+    }
+
+    .post-footer .share a {
+        margin: 1.4rem 0.8rem 0 0.8rem;
+    }
+
+    .older-posts,
+    .newer-posts {
+        position: static;
+        margin: 10px 0;
+    }
+
+    .page-number {
+        display: block;
+    }
+
+    .site-footer {
+        margin-top: 6rem;
+        font-size: 1.1rem;
+    }
+
+}
+
+/* ==========================================================================
+   End of file. Media queries should be the last thing here. Do not add stuff
+   below this point, or it will probably fuck everything up.
+   ========================================================================== */
