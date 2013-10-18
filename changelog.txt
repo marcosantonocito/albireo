@@ -1,5 +1,4 @@
 ------------------------------
-Ghostwriter Version 1.1.0
+Ghostwriter Version 1.0.1
 ------------------------------
-- Fixed some bugs for responsive
-- Added rich snippets support for each post
+- Improved mobile support
