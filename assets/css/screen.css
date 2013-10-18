@@ -759,16 +759,17 @@ table.plain {
         width:auto;
         margin-left: 16px;
         margin-right: 16px;
+        padding: 2rem auto;
         font-size: 0.8em;
         line-height: 1.6em;
     }
 
     #site-head {
-        padding: 10% 0;
+        margin: 2rem auto;
     }
 
     .blog-title {
-        font-size: 3rem;
+        font-size: 3.4rem;
     }
 
     .blog-description {
@@ -790,12 +791,20 @@ table.plain {
         font-size: 2.3rem;
     }
 
+    .post-title{
+        font-size: 2.2rem;
+    }
+
     .post-template .post {
         padding-bottom: 0;
     }
 
     .post-template .post-header {
         padding: 30px 0;
+    }
+
+    .post-template .post-title{
+        font-size: 3.0rem;
     }
 
     .post-meta {
