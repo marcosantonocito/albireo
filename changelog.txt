@@ -1,4 +1,13 @@
 ------------------------------
-Ghostwriter Version 1.0.1
+Albireo Version 1.0.2
+------------------------------
+- Added page.hbs
+- Added Facebook meta tags
+- Fixed date
+- Some improvements
+
+
+------------------------------
+Albireo Version 1.0.1
 ------------------------------
 - Improved mobile support
