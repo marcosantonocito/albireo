@@ -3,6 +3,8 @@
 {{! The comment above "< default" means - insert everything in this file into
     the {body} of the default.hbs template, which contains our header/footer. }}
 
+
+
 <main class="content" role="main">
 
     <article class="{{post_class}}">
@@ -20,6 +22,18 @@
 
         {{! Everything inside the #post tags pulls data from the post }}
         {{#post}}
+        {{#contentFor "meta"}}
+            <meta property="og:type" content="article" />
+            <meta property="og:url" content="{{url absolute="true"}}" />
+            <meta property="og:title" content="{{title}}" />
+            <meta property="og:site_name" content="{{@blog.title}}" />
+            <meta property="og:description" content="{{excerpt characters="220"}}..."/>
+            <meta property="article:author" content="https://facebook.com/<YOUR FACEBOOK ID>" />
+            <meta property="article:published_time" content="{{date format="YYYY-MM-DD"}}" />{{#foreach tags}}
+            <meta property="article:tag" content="{{name}}" />{{/foreach}}
+            <meta property="fb:profile_id" content="<YOUR FACEBOOK ID>" />
+            <meta property="fb:admins" content="<YOUR FACEBOOK ID>" />
+        {{/contentFor}}
 
         {{! Everything below outputs content of the the post which has been published }}
         <div class="post-meta">
