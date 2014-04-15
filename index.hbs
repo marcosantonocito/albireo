@@ -3,6 +3,17 @@
 {{! The comment above "< default" means - insert everything in this file into
     the {body} of the default.hbs template, which contains our header/footer. }}
 
+{{#contentFor "meta"}}
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{@blog.url}}" />
+    <meta property="og:title" content="{{@blog.title}}" />
+    <meta property="og:site_name" content="{{@blog.title}}" />
+    {{#if @blog.logo}}<meta property="og:image" content="{{@blog.logo}}" />{{/if}}
+    <meta property="og:description" content="{{@blog.description}}"/>
+    <meta property="fb:profile_id" content="<YOUR FACEBOOK ID>" />
+    <meta property="fb:admins" content="<YOUR FACEBOOK ID>" />
+{{/contentFor}}
+
 {{! The big featured header on the homepage, with the site logo and description }}
 <header id="site-head">
     <div id="site-head-content" class="inner">
