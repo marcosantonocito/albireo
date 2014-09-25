@@ -1,4 +1,13 @@
 ------------------------------
+Albireo Version 1.0.3
+------------------------------
+- Added support to Ghost 0.5.2
+- Added tag.hbs
+- Added partials/loop.hbs
+- Added author.hbs
+- Some improvements
+
+------------------------------
 Albireo Version 1.0.2
 ------------------------------
 - Added page.hbs

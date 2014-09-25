@@ -1,0 +1,45 @@
+{{!< default}}
+
+{{#contentFor "meta"}}
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{@blog.url}}" />
+    <meta property="og:title" content="{{@blog.title}}" />
+    <meta property="og:site_name" content="{{@blog.title}}" />
+    {{#if @blog.logo}}<meta property="og:image" content="{{@blog.logo}}" />{{/if}}
+    <meta property="og:description" content="{{@blog.description}}"/>
+    <meta property="fb:profile_id" content="<YOUR FACEBOOK ID>" />
+    <meta property="fb:admins" content="<YOUR FACEBOOK ID>" />
+{{/contentFor}}
+
+{{! Everything inside the #author tags pulls data from the author }}
+{{#author}}
+    <header class="author-profile">
+        <div class="inner">
+            {{#if image}}
+            <figure class="author-image">
+                <div class="img" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></div>
+            </figure>
+            {{/if}}
+            <h1 class="blog-title">{{name}}</h1>
+            <h2 class="author-bio">{{bio}}</h2>
+            <ul class="author-meta">
+                {{#if location}}<li><i class="icon-globe"></i> {{location}}</li>{{/if}}
+                {{#if website}}<li><i class="icon-code"></i> <a href="{{website}}">{{website}}</a></li>{{/if}}
+                <li><i class="icon-pencil"></i> {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</span>
+            </ul>
+        </div>
+    </header>
+
+    <nav class="main-nav overlay clearfix">
+        <a class="back-button icon-arrow-left" href="{{@blog.url}}">Home</a>
+    </nav>
+{{/author}}
+
+{{! The main content area on the homepage }}
+<main class="content" role="main">
+
+    {{! The tag below includes the post loop - partials/loop.hbs }}
+    {{> "loop"}}
+
+</main>
+

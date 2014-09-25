@@ -20,11 +20,12 @@
     3.  Utilities
     4.  General
     5.  Single Post
-    6.  Third Party Elements
-    7.  Pagination
-    8.  Footer
-    9.  Media Queries (Tablet)
-    10. Media Queries (Mobile)
+    6.  Author Profile
+    7.  Third Party Elements
+    8.  Pagination
+    9.  Footer
+    10.  Media Queries (Tablet)
+    11. Media Queries (Mobile)
 
  */
 
@@ -108,6 +109,7 @@ h6 {
 
 a {
     color: #2C3237;
+    text-decoration: none;
     transition: color ease 0.3s;
 }
 
@@ -371,6 +373,42 @@ table.plain {
     color: #C2C7CE;
 }
 
+.main-nav.overlay {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    right: 0;
+    height: 70px;
+    border: none;
+}
+
+.back-button {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    height: 38px;
+    padding: 0 15px 0 10px;
+    border: transparent 1px solid;
+    color: #BBC7CC;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 35px;
+    border-radius: 3px;
+    background: #F8F8F8;
+    transition: all ease 0.3s;
+}
+.back-button:before {
+    position: relative;
+    bottom: -2px;
+    font-size: 13px;
+    line-height: 0;
+    margin-right: 8px;
+}
+
+
 /* Every post, on every page, gets this style on its <article> tag */
 .post {
     position: relative;
@@ -564,7 +602,110 @@ table.plain {
 
 
 /* ==========================================================================
-   5. Third Party Elements - Embeds from other services
+   5. Author Profile
+   ========================================================================== */
+
+.author-profile {
+    text-align: center;
+    margin-top: 18rem;
+    margin-bottom: 6rem;
+}
+
+.author-image {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    margin-left: -40px;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    overflow: hidden;
+    padding: 6px;
+    background: #fff;
+    z-index: 2;
+    box-shadow: #E7EEF2 0 0 0 1px;
+}
+
+.author-image .img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 100%;
+}
+
+.author-profile .author-image {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 120px;
+    height: 120px;
+    padding: 3px;
+    margin: -100px auto 0 auto;
+    box-shadow: none;
+}
+
+.author-title {
+    margin: 1.5rem 0 1rem;
+}
+
+.author-bio {
+    font-size: 1.4rem;
+    line-height: 1.5em;
+    font-weight: 200;
+    color: #50585D;
+    letter-spacing: 0;
+    text-indent: 0;
+    margin: 20px auto 0 auto;
+    width: 70%;
+}
+
+.author-meta {
+    margin: 1.6rem 0;
+}
+
+/* Location, website, and link */
+.author-profile .author-meta {
+    display: inline-block;
+    padding: 0.6rem 0 0 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 100;
+    color: #C2C7CE;
+}
+.author-meta li {
+   display: inline;
+    text-align: -webkit-match-parent;
+    margin-left: 20px;
+}
+
+.author-meta li:first-child{
+    margin: 0;
+}
+
+.author-meta i{
+    margin-right: 10px;
+}
+
+.author-meta a {
+    color: #C2C7CE;
+    text-decoration: none;
+}
+
+..author-meta a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==========================================================================
+   6. Third Party Elements - Embeds from other services
    ========================================================================== */
 
 /* Github */
@@ -581,7 +722,7 @@ table.plain {
 
 
 /* ==========================================================================
-   6. Pagination - Tools to let you flick between pages
+   7. Pagination - Tools to let you flick between pages
    ========================================================================== */
 
 /* The main wrapper for our pagination links */
@@ -636,7 +777,7 @@ table.plain {
 
 
 /* ==========================================================================
-   7. Footer - The bottom of every page
+   8. Footer - The bottom of every page
    ========================================================================== */
 
 .site-footer {
@@ -677,7 +818,7 @@ table.plain {
 }
 
 /* ==========================================================================
-   8. Media Queries - Smaller than 900px
+   9. Media Queries - Smaller than 900px
    ========================================================================== */
 
 @media only screen and (max-width: 900px) {
@@ -738,7 +879,7 @@ table.plain {
 }
 
 /* ==========================================================================
-   9. Media Queries - Smaller than 500px
+   10. Media Queries - Smaller than 500px
    ========================================================================== */
 
 

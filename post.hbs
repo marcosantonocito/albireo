@@ -4,21 +4,25 @@
     the {body} of the default.hbs template, which contains our header/footer. }}
 
 
+{{! Each post has the blog logo at the top, with a link back to the home page }}
+<header id="site-head">
+    <div id="site-head-content" class="inner">
+        {{#if @blog.logo}}
+            <a id="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>
+        {{else}}
+            <a href="{{@blog.url}}" class="blog-title">{{@blog.title}}</a>
+        {{/if}}
+    </div>
+</header>
+
+<nav class="main-nav overlay clearfix">
+    <a class="back-button icon-arrow-left" href="{{@blog.url}}">Home</a>
+</nav>
+
 
 <main class="content" role="main">
 
     <article class="{{post_class}}">
-
-        {{! Each post has the blog logo at the top, with a link back to the home page }}
-        <header class="post-header">
-            <a id="blog-logo" href="{{@blog.url}}">
-                {{#if @blog.logo}}
-                    <img src="{{@blog.logo}}" alt="{{@blog.title}}" />
-                {{else}}
-                    {{@blog.title}}
-                {{/if}}
-            </a>
-        </header>
 
         {{! Everything inside the #post tags pulls data from the post }}
         {{#post}}
@@ -29,8 +33,8 @@
             <meta property="og:site_name" content="{{@blog.title}}" />
             <meta property="og:description" content="{{excerpt characters="220"}}..."/>
             <meta property="article:author" content="https://facebook.com/<YOUR FACEBOOK ID>" />
-            <meta property="article:published_time" content="{{date format="YYYY-MM-DD"}}" />{{#foreach tags}}
-            <meta property="article:tag" content="{{name}}" />{{/foreach}}
+            <meta property="article:published_time" content="{{date format="YYYY-MM-DD"}}" />
+            {{#foreach tags}}<meta property="article:tag" content="{{name}}" />{{/foreach}}
             <meta property="fb:profile_id" content="<YOUR FACEBOOK ID>" />
             <meta property="fb:admins" content="<YOUR FACEBOOK ID>" />
         {{/contentFor}}
@@ -44,7 +48,7 @@
 
         {{#if tags}}
             <div class="post-meta">
-                on {{tags separator=", "}}
+                by {{ author }} {{tags prefix=" on "}}
             </div>
         {{/if}}
 

@@ -2,29 +2,24 @@
 <html>
 <head>
     {{! Document Settings }}
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     {{! Page Meta }}
     <title>{{meta_title}}</title>
     <meta name="description" content="{{meta_description}}" />
 
     <meta name="HandheldFriendly" content="True" />
-    <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
     {{! Opengraph meta inspired by walterfranchetti http://frnwtr.com/adding-opengraph-to-ghost/ }}
     {{{block "meta"}}}
 
     {{! Styles'n'Scripts }}
-    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Droid+Serif:400,700|Pacifico' rel='stylesheet' type='text/css'>
-
-    {{! Facebook Meta }}
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="{{@blog.title}}">
-    <meta property="og:description" content="{{@blog.description}}">
-    <meta property="og:url" content="{{@blog.url}}">
-    <meta property="og:site_name" content="{{@blog.title}}">
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
@@ -36,7 +31,7 @@
 
     <footer class="site-footer">
         <div class="inner">
-             <section class="copyright">All content copyright <a href="/">{{@blog.title}}</a> &copy; 2013 &bull; All rights reserved.</section>
+             <section class="copyright">All content copyright <a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
              <section class="poweredby">Designed &amp; Developed by <a href="http://www.marcosantonocito.com">Marco Santonocito</a>. Proudly published with <a class="icon-ghost" href="http://ghost.org">Ghost</a>.</section>
              <section class="subscribe"><a class="icon-rss" href="{{@blog.url}}/rss/"></a></section>
         </div>
@@ -45,7 +40,8 @@
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
 
-    <script type="text/javascript" src="/assets/js/index.js"></script>
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
 
 </body>
 </html>

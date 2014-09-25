@@ -8,14 +8,14 @@
     <article class="{{post_class}}">
 
         {{! Each post has the blog logo at the top, with a link back to the home page }}
-        <header class="post-header">
-            <a id="blog-logo" href="{{@blog.url}}">
+        <header id="site-head">
+            <div id="site-head-content" class="inner">
                 {{#if @blog.logo}}
-                    <img src="{{@blog.logo}}" alt="{{@blog.title}}" />
+                    <a id="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>
                 {{else}}
-                    {{@blog.title}}
+                    <a href="{{@blog.url}}" class="blog-title">{{@blog.title}}</a>
                 {{/if}}
-            </a>
+            </div>
         </header>
 
         {{! Everything inside the #post tags pulls data from the post }}
