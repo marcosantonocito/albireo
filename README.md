@@ -1,4 +1,4 @@
-# Albireo
+# Albireo [![Stories in Ready](https://badge.waffle.io/waffleio/waffle.io.svg)](https://waffle.io/santonocito/albireo)
 
 A simple theme for [Ghost](http://github.com/tryghost/ghost/).
 
