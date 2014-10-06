@@ -2,7 +2,7 @@
 
 A simple theme for [Ghost](http://github.com/tryghost/ghost/).
 
-[Albireo - Clean Ghost Theme](https://raw.github.com/santonocito/albireo/master/screenshot.png)
+![Albireo - Clean Ghost Theme](https://raw.github.com/santonocito/albireo/master/screenshot.png)
 
 ## Copyright & License
 
