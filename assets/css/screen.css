@@ -48,7 +48,7 @@ html {
 }
 
 body {
-    font-family: 'Droid Serif', serif;
+    font-family: 'Ubuntu', serif;
     font-size: 2.0rem;
     line-height: 1.6em;
     color: #2C3237;
@@ -73,7 +73,7 @@ h4, h5, h6 {
     text-rendering: optimizeLegibility;
     line-height: 1;
     margin-top: 0;
-    font-family: 'Droid serif', serif;
+    font-family: 'Ubuntu', serif;
     font-weight: 700;
 }
 
@@ -153,7 +153,7 @@ blockquote {
 
 blockquote p {
     margin: 0.8em 0;
-    font-family: "Georgia", serif;
+    font-family: 'Ubuntu', serif;
     font-size: 2.4rem;
     font-style: italic;
     color: #BBC7CC;
@@ -339,7 +339,7 @@ table.plain {
 /* Yo-logo. Yolo-go. Upload one in ghost/settings/ */
 #blog-logo img {
     display: block;
-    max-height: 100px;
+    max-height: 50px;
     width: auto;
     margin: 0 auto;
     line-height: 0;
@@ -356,7 +356,7 @@ table.plain {
 
 /* The details of your blog. Defined in ghost/settings/ */
 .blog-title {
-    font-family: 'Pacifico', serif;
+    font-family: 'Ubuntu', serif;
     margin: 30px 0 10px 0;
     font-size: 4rem;
     font-weight: 300;
@@ -368,7 +368,7 @@ table.plain {
     font-size: 1.8rem;
     line-height: 1.5em;
     font-weight: 100;
-    font-family: 'Lato', serif;
+    font-family: 'Ubuntu', serif;
     letter-spacing: 0;
     color: #C2C7CE;
 }
@@ -450,7 +450,7 @@ table.plain {
     display: inline-block;
     padding: 0.6rem 0 0 0;
     margin: 0;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 1.6rem;
     font-weight: 100;
     color: #C2C7CE;
@@ -675,7 +675,7 @@ table.plain {
     display: inline-block;
     padding: 0.6rem 0 0 0;
     margin: 0;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 1.6rem;
     font-weight: 100;
     color: #C2C7CE;
@@ -731,7 +731,7 @@ table.plain {
     width: 80%;
     max-width: 680px;
     margin: 4rem auto;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 1.4rem;
     font-weight: 100;
     color: #BBC7CC;
@@ -784,7 +784,7 @@ table.plain {
     position: relative;
     margin: 8rem 0 0 0;
     padding: 4rem 0;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 1.3rem;
     font-weight: 100;
     line-height: 2.0em;
