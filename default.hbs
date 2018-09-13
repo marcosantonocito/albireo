@@ -7,7 +7,6 @@
 
     {{! Page Meta }}
     <title>{{meta_title}}</title>
-    <meta name="description" content="{{meta_description}}" />
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,8 +17,8 @@
     {{{block "meta"}}}
 
     {{! Styles'n'Scripts }}
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,700" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Droid+Serif:400,700|Pacifico' rel='stylesheet' type='text/css'>
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
@@ -32,7 +31,6 @@
     <footer class="site-footer">
         <div class="inner">
              <section class="copyright">All content copyright <a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
-             <section class="poweredby">Designed &amp; Developed by <a href="http://www.marcosantonocito.com">Marco Santonocito</a>. Proudly published with <a class="icon-ghost" href="http://ghost.org">Ghost</a>.</section>
              <section class="subscribe"><a class="icon-rss" href="{{@blog.url}}/rss/"></a></section>
         </div>
     </footer>

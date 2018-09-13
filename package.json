@@ -1,6 +1,7 @@
 {
-  "name": "Albireo",
+  "name": "albireo",
   "version": "1.0.3",
   "author": "Marco Santonocito <hello@marcosantonocito.com>",
+  "author.email": "hello@marcosantonocito.com",
   "description": "A simple theme for Ghost."
 }

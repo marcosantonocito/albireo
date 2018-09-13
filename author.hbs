@@ -15,9 +15,9 @@
 {{#author}}
     <header class="author-profile">
         <div class="inner">
-            {{#if image}}
+            {{#if feature_image}}
             <figure class="author-image">
-                <div class="img" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></div>
+                <div class="img" style="background-image: url({{image_url}})"><span class="hidden">{{name}}'s Picture</span></div>
             </figure>
             {{/if}}
             <h1 class="blog-title">{{name}}</h1>
@@ -42,4 +42,3 @@
     {{> "loop"}}
 
 </main>
-
